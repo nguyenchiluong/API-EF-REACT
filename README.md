@@ -1,9 +1,8 @@
-Dưới đây là phiên bản **README.md sạch sẽ, copy-được, đầy đủ, đúng định dạng**:
 
 ---
 
 # Bài tập Web API – React
-
+# 21127643 - Nguyễn Chí Lương
 ## 1. Cấu hình Database
 
 ### Tạo container MySQL bằng Docker
