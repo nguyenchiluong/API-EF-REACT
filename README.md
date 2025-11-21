@@ -44,7 +44,7 @@ USE taskdb;
 
 ---
 
-## 2. File `TaskApi/appsettings.json`
+## 2. Sửa nội dung file `TaskApi/appsettings.json`
 
 ```json
 {
@@ -63,7 +63,7 @@ USE taskdb;
 
 ---
 
-## 3. File `task-client/.env.local`
+## 3. Tạo file `task-client/.env.local`
 
 ```
 VITE_API_BASE_URL=http://localhost:5217/api/
@@ -71,7 +71,7 @@ VITE_API_BASE_URL=http://localhost:5217/api/
 
 ---
 
-## 4. File `task-client/vite.config.js`
+## 4. Sửa nội dung file `task-client/vite.config.js`
 
 > Port frontend được cấu hình là **5173**
 
