@@ -96,12 +96,16 @@ export default defineConfig({
 
 ```
 cd TaskApi
+```
+```
 dotnet run
 ```
 > Chạy Front-end
 
 ```
 cd task-client
+```
+```
 npm run dev
 ```
 ---
