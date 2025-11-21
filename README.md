@@ -90,3 +90,18 @@ export default defineConfig({
 
 ---
 
+## 5. Chạy chương trình
+
+> Chạy API
+
+```
+cd TaskApi
+dotnet run
+```
+> Chạy Front-end
+
+```
+cd task-client
+npm run dev
+```
+---
