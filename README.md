@@ -1,77 +1,82 @@
-Personal Task Manager — Web API + React
+Dưới đây là phiên bản **README.md sạch sẽ, copy-được, đầy đủ, đúng định dạng**:
 
+---
 
-1. Setup Database (MySQL via Docker)
+# Bài tập Web API – React
 
-Open Terminal and run:
+## 1. Cấu hình Database
 
-docker run -d \
-  --name mysql-task \
-  -e MYSQL_ROOT_PASSWORD=123456 \
-  -e MYSQL_DATABASE=taskdb \
-  -p 3306:3306 \
-  -v mysql_data:/var/lib/mysql \
-  mysql:8.0
+### Tạo container MySQL bằng Docker
 
+```bash
+docker run -d --name mysql-task -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=taskdb -p 3306:3306 -v mysql_data:/var/lib/mysql mysql:8.0
+```
 
-Check running containers:
+### Kiểm tra container
 
+```bash
 docker ps
+```
 
+### Khởi động lại MySQL nếu container đã tồn tại
 
-Start MySQL container:
-
+```bash
 docker start mysql-task
+```
 
+### Kết nối vào MySQL để kiểm tra
 
-Open MySQL shell:
-
+```bash
 docker exec -it mysql-task mysql -u root -p
+```
 
+Nhập mật khẩu:
 
-Password: 123456
+```
+123456
+```
 
-Inside MySQL:
+### Trong MySQL Shell chạy thử:
 
+```sql
 SHOW DATABASES;
 USE taskdb;
+```
 
-2. Configure ASP.NET Core API
+---
 
-File: TaskApi/appsettings.json
+## 2. File `TaskApi/appsettings.json`
 
+```json
 {
   "ConnectionStrings": {
     "Default": "server=localhost;port=3306;database=taskdb;user=root;password=123456"
   },
   "Logging": {
-    "LogLevel": {
+    "LogLevel": { 
       "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
+      "Microsoft.AspNetCore": "Warning" 
     }
   },
   "AllowedHosts": "*"
 }
+```
 
+---
 
-Run API:
+## 3. File `task-client/.env.local`
 
-dotnet run
-
-
-API base URL:
-
-http://localhost:5217/api/
-
-3. Configure React Frontend (Vite)
-
-File: task-client/.env.local
-
+```
 VITE_API_BASE_URL=http://localhost:5217/api/
+```
 
+---
 
-File: task-client/vite.config.js
+## 4. File `task-client/vite.config.js`
 
+> Port frontend được cấu hình là **5173**
+
+```js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -82,3 +87,7 @@ export default defineConfig({
     host: true,
   },
 })
+```
+
+---
+
